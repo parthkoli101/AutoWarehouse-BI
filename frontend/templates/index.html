@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warehouse Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="https://unpkg.com/vis-network@9.1.6/standalone/umd/vis-network.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/6.1.0/echarts.min.js"></script>
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">WC</span>
+      <span class="brand-name">Warehouse Console</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button type="button" class="nav-item active" data-page="overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>Overview</span>
+      </button>
+      <button type="button" class="nav-item" data-page="ingestion">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M12 4L7 9M12 4l5 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Data Ingestion</span>
+      </button>
+      <button type="button" class="nav-item" data-page="blueprint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 7.5L15.8 16.5M8.2 16.5L15.8 7.5M8.5 6H15.5M8.5 18H15.5" stroke-linecap="round"/></svg>
+        <span>Blueprint</span>
+      </button>
+      <button type="button" class="nav-item" data-page="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V10M10 19V5M16 19v-7M20 19H4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Dashboard</span>
+      </button>
+      <div class="sub-nav" id="dashboard-sub-nav"></div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="status-line">
+        <span class="dot dot-idle" id="mongo-dot"></span>
+        <span id="mongo-label">MongoDB</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN AREA -->
+  <div class="main-area">
+
+    <header class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-page-title" id="topbar-page-title">Overview</span>
+      </div>
+      <div class="topbar-right">
+        <span class="topbar-label">WAREHOUSE</span>
+        <select id="warehouse-select" class="warehouse-select"></select>
+        <button type="button" class="btn-icon" id="btn-new-warehouse" title="Create new warehouse">+ New</button>
+        <button type="button" class="btn-icon btn-icon-danger" id="btn-delete-warehouse" title="Delete this warehouse">Delete</button>
+      </div>
+    </header>
+
+    <main class="content-area">
+
+      <!-- ==================== PAGE: OVERVIEW ==================== -->
+      <section class="page active" id="page-overview">
+        <div class="page-empty" id="overview-empty">No warehouse selected yet, or nothing built for it. Head to <b>Data Ingestion</b> to get started.</div>
+
+        <div class="page-body" id="overview-body" hidden>
+          <div class="blueprint-overview" id="blueprint-overview" hidden>
+            <p class="dash-summary-label">Architecture Overview</p>
+            <p class="blueprint-overview-text" id="blueprint-overview-text"></p>
+          </div>
+
+          <div class="blueprint-section" id="profile-section" hidden>
+            <p class="dash-summary-label">Dataset Profile <span class="label-note">(computed directly, not AI-generated)</span></p>
+            <div class="profile-stats-row" id="profile-stats-row"></div>
+          </div>
+
+          <div class="pipeline-strip" id="pipeline-strip"></div>
+          <div class="tech-stack-strip" id="tech-stack-strip"></div>
+        </div>
+      </section>
+
+      <!-- ==================== PAGE: INGESTION ==================== -->
+      <section class="page" id="page-ingestion">
+        <div class="ingestion-grid">
+
+          <div class="panel" aria-labelledby="upload-heading">
+            <div class="panel-head">
+              <span class="panel-index">01</span>
+              <h2 id="upload-heading">File Ingestion</h2>
+              <p class="panel-sub">CSV / Excel files, or a folder of them</p>
+            </div>
+
+            <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload files or folder">
+              <svg class="dropzone-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 16V4M12 4L7 9M12 4l5 5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p class="dropzone-text">Drop files here, or</p>
+              <div class="dropzone-buttons">
+                <button type="button" class="btn btn-ghost" id="btn-choose-files">Choose files</button>
+                <button type="button" class="btn btn-ghost" id="btn-choose-folder">Choose folder</button>
+              </div>
+              <input type="file" id="input-files" multiple accept=".csv,.xlsx,.xls" hidden>
+              <input type="file" id="input-folder" webkitdirectory directory multiple hidden>
+            </div>
+
+            <ul class="file-list" id="file-list" aria-live="polite"></ul>
+
+            <button type="button" class="btn btn-secondary" id="btn-upload" disabled>Stage files</button>
+            <button type="button" class="btn btn-primary" id="btn-create-files">Create Warehouse from Files</button>
+          </div>
+
+          <div class="panel" aria-labelledby="connect-heading">
+            <div class="panel-head">
+              <span class="panel-index">02</span>
+              <h2 id="connect-heading">Database Connection</h2>
+              <p class="panel-sub">Live MySQL source</p>
+            </div>
+
+            <form id="connect-form" class="connect-form">
+              <div class="field-row">
+                <label class="field">
+                  <span>Host</span>
+                  <input type="text" name="host" placeholder="localhost" value="localhost" required>
+                </label>
+                <label class="field field-narrow">
+                  <span>Port</span>
+                  <input type="text" name="port" placeholder="3306" value="3306">
+                </label>
+              </div>
+              <label class="field">
+                <span>Username</span>
+                <input type="text" name="username" placeholder="root" required>
+              </label>
+              <label class="field">
+                <span>Password</span>
+                <input type="password" name="password" placeholder="••••••••">
+              </label>
+              <label class="field">
+                <span>Database name</span>
+                <input type="text" name="database" placeholder="reliance_sales" required>
+              </label>
+
+              <button type="submit" class="btn btn-secondary" id="btn-connect">Connect</button>
+            </form>
+
+            <div class="schema-result" id="schema-result" hidden>
+              <p class="schema-result-label">Tables found</p>
+              <ul class="table-list" id="table-list"></ul>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="btn-create-db" disabled>Create Warehouse from Database</button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== PAGE: BLUEPRINT ==================== -->
+      <section class="page" id="page-blueprint">
+        <div class="page-head-row">
+          <p class="page-sub">Tables, relationships, roles, and dataset profile for the built warehouse</p>
+          <button type="button" class="btn btn-primary btn-inline" id="btn-generate-blueprint">Generate Blueprint (AI)</button>
+        </div>
+
+        <div class="page-empty" id="viz-empty">No warehouse built yet — go to Data Ingestion.</div>
+
+        <div class="page-body" id="viz-body" hidden>
+          <div class="viz-graph-wrap">
+            <div id="graph" class="viz-graph"></div>
+          </div>
+
+          <div class="blueprint-tables" id="blueprint-tables" hidden></div>
+
+          <!-- relationship heatmap -- real data (actual FK relationships), not decorative -->
+          <div class="chart-card chart-card-wide" id="heatmap-card" hidden>
+            <h3>Table Relationship Heatmap <span class="card-subtitle">Real foreign-key connections between tables</span></h3>
+            <div class="echart-wrap echart-wrap-lg" id="relationship-heatmap"></div>
+          </div>
+
+          <div class="blueprint-section" id="profile-section-full" hidden>
+            <p class="dash-summary-label">Dataset Profile <span class="label-note">(computed directly, not AI-generated)</span></p>
+            <div class="profile-tables" id="profile-tables"></div>
+          </div>
+
+          <div class="blueprint-grid" id="blueprint-grid" hidden>
+            <div class="blueprint-section" id="insights-section">
+              <p class="dash-summary-label">Key Insights Enabled</p>
+              <ul class="blueprint-list" id="insights-list"></ul>
+            </div>
+            <div class="blueprint-section" id="kpis-section">
+              <p class="dash-summary-label">Suggested KPIs</p>
+              <div class="kpi-chip-row" id="kpi-chip-row"></div>
+            </div>
+            <div class="blueprint-section" id="usecases-section">
+              <p class="dash-summary-label">Business Use Cases</p>
+              <ul class="blueprint-list" id="usecases-list"></ul>
+            </div>
+          </div>
+
+          <div class="viz-summary">
+            <p class="schema-result-label" id="viz-source-label">Source</p>
+            <table class="summary-table" id="summary-table">
+              <thead>
+                <tr><th>Table</th><th>Rows</th><th>Cols</th></tr>
+              </thead>
+              <tbody id="summary-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== PAGE: DASHBOARD ==================== -->
+      <section class="page" id="page-dashboard">
+        <div class="page-head-row">
+          <div>
+            <p class="dashboard-active-title" id="dashboard-active-title">Dashboard</p>
+            <p class="page-sub" id="dashboard-active-focus">AI-designed from the warehouse schema, via local Ollama (qwen2.5:7b)</p>
+          </div>
+          <div class="dash-controls">
+            <span class="dash-status" id="dash-status"></span>
+            <button type="button" class="btn btn-ghost" id="btn-refresh-dashboard">Refresh</button>
+            <button type="button" class="btn btn-primary btn-inline" id="btn-design-dashboard">Design Dashboards (AI)</button>
+          </div>
+        </div>
+
+        <div class="page-empty" id="dash-empty">No dashboards designed yet — click "Design Dashboards (AI)" once a warehouse exists. Requires Ollama running locally, and can take several minutes (it generates multiple themed dashboards, not just one).</div>
+
+        <div class="page-body" id="dash-body" hidden>
+          <div class="dash-summary" id="dash-summary" hidden>
+            <p class="dash-summary-label">AI Summary</p>
+            <p class="dash-summary-text" id="dash-summary-text"></p>
+          </div>
+          <div class="kpi-row" id="kpi-row"></div>
+
+          <!-- table-role radar -- real data (actual role counts from the blueprint), shown only on the Centralized Overview -->
+          <div class="chart-card chart-card-wide" id="radar-card" hidden>
+            <h3>Warehouse Composition <span class="card-subtitle">Table count by role (fact / dimension / reference / lookup)</span></h3>
+            <div class="echart-wrap echart-wrap-lg" id="role-radar"></div>
+          </div>
+
+          <div class="chart-grid" id="chart-grid"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- LOG STRIP -->
+    <footer class="log-strip">
+      <div class="log-strip-head">
+        <span class="dot dot-idle" id="log-dot"></span>
+        <span>SYSTEM LOG</span>
+      </div>
+      <div class="log-lines" id="log-lines">
+        <div class="log-line log-line-muted">&gt; awaiting input...</div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
