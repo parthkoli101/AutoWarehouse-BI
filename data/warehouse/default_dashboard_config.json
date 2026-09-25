@@ -1,0 +1,327 @@
+{
+  "generated_at": "2026-08-20T07:47:44.167806+00:00",
+  "dashboards": [
+    {
+      "id": "centralized",
+      "title": "Centralized Overview",
+      "focus": "Top metrics across every dashboard",
+      "kpis": [
+        {
+          "title": "Number of Regular Customers",
+          "sql": "SELECT COUNT(*) AS count FROM croma_customers_dataset WHERE customer_segment = 'Regular'",
+          "format": "number"
+        },
+        {
+          "title": "Average Age of Customers",
+          "sql": "SELECT AVG(age) AS avg_age FROM croma_customers_dataset",
+          "format": "number"
+        },
+        {
+          "title": "Total Revenue",
+          "sql": "SELECT SUM(total_amount) AS total_revenue FROM croma_order_items_dataset",
+          "format": "currency"
+        },
+        {
+          "title": "Average Rating",
+          "sql": "SELECT AVG(rating) AS avg_rating FROM croma_reviews_dataset",
+          "format": "number"
+        },
+        {
+          "title": "Cancelled Orders Percentage",
+          "sql": "SELECT 100 * COUNT(CASE WHEN order_status = 'Cancelled' THEN order_id END) / COUNT(order_id) AS cancelled_orders_percentage FROM croma_orders_dataset",
+          "format": "percent"
+        },
+        {
+          "title": "Total Revenue",
+          "sql": "SELECT SUM(total_amount) AS total_revenue FROM croma_order_items_dataset",
+          "format": "currency"
+        }
+      ],
+      "charts": [
+        {
+          "title": "Customer Segmentation by Region",
+          "chart_type": "bar",
+          "sql": "SELECT region, COUNT(*) AS count FROM croma_customers_dataset GROUP BY region ORDER BY count DESC LIMIT 8",
+          "x_field": "region",
+          "y_field": "count"
+        },
+        {
+          "title": "Top 8 Products by Revenue",
+          "chart_type": "bar",
+          "sql": "SELECT product_id, SUM(total_amount) AS total_revenue FROM croma_order_items_dataset GROUP BY product_id ORDER BY total_revenue DESC LIMIT 8",
+          "x_field": "product_id",
+          "y_field": "total_revenue"
+        },
+        {
+          "title": "Cancelled Orders by Channel",
+          "chart_type": "bar",
+          "sql": "SELECT order_channel, COUNT(CASE WHEN order_status = 'Cancelled' THEN order_id END) AS cancelled_orders FROM croma_orders_dataset GROUP BY order_channel",
+          "x_field": "order_channel",
+          "y_field": "cancelled_orders"
+        },
+        {
+          "title": "Top 8 Regions by Customer Segments",
+          "chart_type": "bar",
+          "sql": "SELECT customer_segment AS customer_segment, COUNT(*) AS num_customers FROM croma_customers_dataset GROUP BY customer_segment ORDER BY num_customers DESC LIMIT 8",
+          "x_field": "customer_segment",
+          "y_field": "num_customers"
+        },
+        {
+          "title": "Customer Activity by Season",
+          "chart_type": "bar",
+          "sql": "SELECT season, COUNT(order_id) AS customer_activity FROM croma_orders_dataset GROUP BY season ORDER BY customer_activity DESC LIMIT 8",
+          "x_field": "season",
+          "y_field": "customer_activity"
+        }
+      ],
+      "summary": "Centralized view combining the most important metrics across 5 focus area(s): Customer Behavior, Product Performance, Order Fulfillment, Geographical Insights, Seasonal Trends. Each section below has its own dedicated dashboard with deeper detail.",
+      "kpi_insights": {
+        "Number of Regular Customers": "With 27,599 regular customers, the company has a substantial base of loyal patrons.",
+        "Average Age of Customers": "",
+        "Total Revenue": "The total revenue of 14,609,390,523.80 aligns with the product performance theme.",
+        "Average Rating": "An average rating of 3.94 indicates a generally positive customer experience.",
+        "Cancelled Orders Percentage": "The 5.01% cancellation rate is low, suggesting efficient order management."
+      },
+      "chart_insights": {
+        "Customer Segmentation by Region": "The West and South regions dominate with 13,400 and 11,649 customers, respectively, highlighting regional preferences.",
+        "Top 8 Products by Revenue": "PRD00068 leads with 386,008,799.40, showing that a few key products significantly drive revenue.",
+        "Cancelled Orders by Channel": "Online channels account for 3,714 cancellations, more than double the 2,295 from in-store, indicating a higher risk of cancellations online.",
+        "Top 8 Regions by Customer Segments": "",
+        "Customer Activity by Season": ""
+      }
+    },
+    {
+      "id": "customer-behavior",
+      "title": "Customer Behavior",
+      "focus": "Analyze customer segmentation and behavior across different regions and time periods.",
+      "kpis": [
+        {
+          "title": "Number of Regular Customers",
+          "sql": "SELECT COUNT(*) AS count FROM croma_customers_dataset WHERE customer_segment = 'Regular'",
+          "format": "number"
+        },
+        {
+          "title": "Average Age of Customers",
+          "sql": "SELECT AVG(age) AS avg_age FROM croma_customers_dataset",
+          "format": "number"
+        },
+        {
+          "title": "Customer Acquisition Rate",
+          "sql": "SELECT COUNT(*) AS new_customers, (SELECT COUNT(*) FROM croma_customers_dataset WHERE customer_since_date >= '2022-01-01') AS total_customers, (COUNT(*) / (SELECT COUNT(*) FROM croma_customers_dataset WHERE customer_since_date >= '2022-01-01')) * 100 AS rate FROM croma_customers_dataset WHERE customer_since_date >= '2022-01-01'",
+          "format": "percent"
+        },
+        {
+          "title": "Average Order Value",
+          "sql": "SELECT AVG(total_amount) AS avg_order_value FROM croma_order_items_dataset",
+          "format": "currency"
+        }
+      ],
+      "charts": [
+        {
+          "title": "Customer Segmentation by Region",
+          "chart_type": "bar",
+          "sql": "SELECT region, COUNT(*) AS count FROM croma_customers_dataset GROUP BY region ORDER BY count DESC LIMIT 8",
+          "x_field": "region",
+          "y_field": "count"
+        },
+        {
+          "title": "Customer Orders by Season",
+          "chart_type": "bar",
+          "sql": "SELECT season, COUNT(*) AS count FROM croma_orders_dataset GROUP BY season ORDER BY count DESC LIMIT 8",
+          "x_field": "season",
+          "y_field": "count"
+        },
+        {
+          "title": "Customer Reviews by Product Category",
+          "chart_type": "bar",
+          "sql": "SELECT sub_category, COUNT(*) AS count FROM croma_reviews_dataset JOIN croma_products_dataset ON croma_reviews_dataset.product_id = croma_products_dataset.product_id GROUP BY sub_category HAVING count > 10",
+          "x_field": "sub_category",
+          "y_field": "count"
+        },
+        {
+          "title": "Customer Orders by Month",
+          "chart_type": "line",
+          "sql": "SELECT month_name, COUNT(*) AS count FROM croma_orders_dataset JOIN croma_date_dim ON croma_orders_dataset.order_date = croma_date_dim.date GROUP BY month_name ORDER BY count DESC LIMIT 8",
+          "x_field": "month_name",
+          "y_field": "count"
+        },
+        {
+          "title": "Top 10 Cities by Customer Count",
+          "chart_type": "table",
+          "sql": "SELECT city, COUNT(*) AS count FROM croma_customers_dataset GROUP BY city ORDER BY count DESC LIMIT 10",
+          "x_field": "city",
+          "y_field": "count"
+        }
+      ],
+      "summary": "The data reveals a diverse customer base with a significant concentration in the West and South regions, and a high number of regular customers. The average order value is notably high, indicating premium purchases.",
+      "kpi_insights": {
+        "Number of Regular Customers": "With 27,599 regular customers, the company has a substantial base of loyal patrons.",
+        "Average Age of Customers": "",
+        "Customer Acquisition Rate": "The acquisition rate of 23,981 suggests a steady growth in customer base.",
+        "Average Order Value": "The average order value of 60,769.66 indicates a focus on high-value transactions."
+      },
+      "chart_insights": {
+        "Customer Segmentation by Region": "The West and South regions dominate with 13,400 and 11,649 customers, respectively, highlighting regional preferences.",
+        "Customer Orders by Season": "Post-Monsoon/Festive season sees the highest order volume, with 38,727 orders, indicating strong seasonal trends.",
+        "Customer Reviews by Product Category": "Mid-range products receive the highest reviews, with 5,752, suggesting a strong market for mid-tier offerings.",
+        "Customer Orders by Month": "October and November see the highest order volumes, with 19,599 and 19,128 orders, respectively, pointing to a strong holiday season.",
+        "Top 10 Cities by Customer Count": "Pune leads with 1,716 customers, followed closely by Vadodara, Chandigarh, Nagpur, and Kanpur, indicating regional hotspots."
+      }
+    },
+    {
+      "id": "product-performance",
+      "title": "Product Performance",
+      "focus": "Evaluate product sales and customer ratings to identify top-performing items.",
+      "kpis": [
+        {
+          "title": "Total Revenue",
+          "sql": "SELECT SUM(total_amount) AS total_revenue FROM croma_order_items_dataset",
+          "format": "currency"
+        },
+        {
+          "title": "Average Rating",
+          "sql": "SELECT AVG(rating) AS avg_rating FROM croma_reviews_dataset",
+          "format": "number"
+        },
+        {
+          "title": "Customer Satisfaction Rate",
+          "sql": "SELECT COUNT(*) AS total_reviews, SUM(CASE WHEN rating >= 4 THEN 1 ELSE 0 END) AS satisfied_reviews FROM croma_reviews_dataset",
+          "format": "percent"
+        }
+      ],
+      "charts": [
+        {
+          "title": "Top 8 Products by Revenue",
+          "chart_type": "bar",
+          "sql": "SELECT product_id, SUM(total_amount) AS total_revenue FROM croma_order_items_dataset GROUP BY product_id ORDER BY total_revenue DESC LIMIT 8",
+          "x_field": "product_id",
+          "y_field": "total_revenue"
+        },
+        {
+          "title": "Average Rating by Category",
+          "chart_type": "bar",
+          "sql": "SELECT sub_category, AVG(rating) AS avg_rating FROM croma_reviews_dataset INNER JOIN croma_products_dataset ON croma_reviews_dataset.product_id = croma_products_dataset.product_id GROUP BY sub_category",
+          "x_field": "sub_category",
+          "y_field": "avg_rating"
+        },
+        {
+          "title": "Heatmap of Rating Distribution by Month and Year",
+          "chart_type": "heatmap",
+          "sql": "SELECT month_name, year, COUNT(*) AS rating_count FROM croma_reviews_dataset INNER JOIN croma_date_dim ON croma_reviews_dataset.review_date = croma_date_dim.date GROUP BY month_name, year",
+          "x_field": "month_name",
+          "y_field": "year",
+          "value_field": "rating_count"
+        },
+        {
+          "title": "Top 8 Cities by Total Revenue",
+          "chart_type": "bar",
+          "sql": "SELECT city, SUM(total_amount) AS total_revenue FROM croma_order_items_dataset INNER JOIN croma_orders_dataset ON croma_order_items_dataset.order_id = croma_orders_dataset.order_id INNER JOIN croma_customers_dataset ON croma_orders_dataset.customer_id = croma_customers_dataset.customer_id GROUP BY city ORDER BY total_revenue DESC LIMIT 8",
+          "x_field": "city",
+          "y_field": "total_revenue"
+        }
+      ],
+      "summary": "The product performance data highlights a strong revenue generation, with a few top products driving the majority of sales. The average rating is above 3.9, indicating overall customer satisfaction.",
+      "kpi_insights": {
+        "Total Revenue": "The total revenue of 14,609,390,523.80 suggests robust financial performance.",
+        "Average Rating": "An average rating of 3.94 indicates a generally positive customer experience.",
+        "Customer Satisfaction Rate": "The customer satisfaction rate of 55,574 reflects a high level of customer contentment."
+      },
+      "chart_insights": {
+        "Top 8 Products by Revenue": "PRD00068 leads with 386,008,799.40, showing that a few key products significantly drive revenue.",
+        "Average Rating by Category": "Mirrorless cameras have the highest average rating of 4.02, indicating high customer satisfaction in this category.",
+        "Heatmap of Rating Distribution by Month and Year": "November consistently shows the highest ratings, with 1,827, suggesting a strong performance in that month.",
+        "Top 8 Cities by Total Revenue": "Pune is the top revenue generator with 524,905,638.80, indicating a strong local market."
+      }
+    },
+    {
+      "id": "order-fulfillment",
+      "title": "Order Fulfillment",
+      "focus": "Assess the efficiency of order processing and delivery times across different channels and seasons.",
+      "kpis": [
+        {
+          "title": "Cancelled Orders Percentage",
+          "sql": "SELECT 100 * COUNT(CASE WHEN order_status = 'Cancelled' THEN order_id END) / COUNT(order_id) AS cancelled_orders_percentage FROM croma_orders_dataset",
+          "format": "percent"
+        },
+        {
+          "title": "Total Revenue",
+          "sql": "SELECT SUM(total_amount) AS total_revenue FROM croma_order_items_dataset",
+          "format": "currency"
+        }
+      ],
+      "charts": [
+        {
+          "title": "Cancelled Orders by Channel",
+          "chart_type": "bar",
+          "sql": "SELECT order_channel, COUNT(CASE WHEN order_status = 'Cancelled' THEN order_id END) AS cancelled_orders FROM croma_orders_dataset GROUP BY order_channel",
+          "x_field": "order_channel",
+          "y_field": "cancelled_orders"
+        },
+        {
+          "title": "Top 10 Products by Revenue",
+          "chart_type": "table",
+          "sql": "SELECT product_name, SUM(total_amount) AS total_revenue, COUNT(order_id) AS order_count FROM croma_order_items_dataset JOIN croma_products_dataset ON croma_order_items_dataset.product_id = croma_products_dataset.product_id GROUP BY product_name ORDER BY total_revenue DESC LIMIT 10",
+          "x_field": "product_name",
+          "y_field": "total_revenue"
+        }
+      ],
+      "summary": "The order fulfillment data indicates a relatively low cancellation rate, with most cancellations occurring through the online channel. The top products by revenue are consistent with the product performance theme, reflecting strong sales performance.",
+      "kpi_insights": {
+        "Cancelled Orders Percentage": "The 5.01% cancellation rate is low, suggesting efficient order management.",
+        "Total Revenue": "The total revenue of 14,609,390,523.80 aligns with the product performance theme."
+      },
+      "chart_insights": {
+        "Cancelled Orders by Channel": "Online channels account for 3,714 cancellations, more than double the 2,295 from in-store, indicating a higher risk of cancellations online.",
+        "Top 10 Products by Revenue": "LG OLED C3 55in and Dell XPS 13 dominate with 386,008,799.40 and 338,727,554.99, respectively, confirming their high sales performance."
+      }
+    },
+    {
+      "id": "geographical-insights",
+      "title": "Geographical Insights",
+      "focus": "Explore sales and customer distribution across different cities and regions.",
+      "kpis": [],
+      "charts": [
+        {
+          "title": "Top 8 Regions by Customer Segments",
+          "chart_type": "bar",
+          "sql": "SELECT customer_segment AS customer_segment, COUNT(*) AS num_customers FROM croma_customers_dataset GROUP BY customer_segment ORDER BY num_customers DESC LIMIT 8",
+          "x_field": "customer_segment",
+          "y_field": "num_customers"
+        },
+        {
+          "title": "Customer Distribution by Region",
+          "chart_type": "pie",
+          "sql": "SELECT region AS region, COUNT(*) AS num_customers FROM croma_customers_dataset GROUP BY region",
+          "x_field": "region",
+          "y_field": "num_customers"
+        }
+      ],
+      "summary": "The geographical insights show a clear regional preference, with the West and South regions hosting the highest number of customers. The distribution of new and regular customers is also notable.",
+      "kpi_insights": {},
+      "chart_insights": {
+        "Top 8 Regions by Customer Segments": "",
+        "Customer Distribution by Region": "The West and South regions are the most populated, with 13,400 and 11,649 customers, respectively, showing a regional focus."
+      }
+    },
+    {
+      "id": "seasonal-trends",
+      "title": "Seasonal Trends",
+      "focus": "Identify seasonal patterns in sales and customer activity using date and season columns.",
+      "kpis": [],
+      "charts": [
+        {
+          "title": "Customer Activity by Season",
+          "chart_type": "bar",
+          "sql": "SELECT season, COUNT(order_id) AS customer_activity FROM croma_orders_dataset GROUP BY season ORDER BY customer_activity DESC LIMIT 8",
+          "x_field": "season",
+          "y_field": "customer_activity"
+        }
+      ],
+      "summary": "The data indicates a strong seasonal pattern, with the post-monsoon/festive season driving the highest customer activity, followed by summer and winter.",
+      "kpi_insights": {},
+      "chart_insights": {
+        "Customer Activity by Season": ""
+      }
+    }
+  ]
+}

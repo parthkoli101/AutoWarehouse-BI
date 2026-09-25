@@ -1,0 +1,454 @@
+{
+  "generated_at": "2026-08-21T07:40:05.633916+00:00",
+  "overview": "This data warehouse tracks e-commerce transactions, including customer interactions, product details, seller information, and order items, with a focus on sales and delivery metrics. The warehouse integrates customer, product, seller, and date dimensions to provide a comprehensive view of the business operations and performance.",
+  "tables": [
+    {
+      "name": "fact_order_items",
+      "role": "fact",
+      "purpose": "Records detailed transactional data for each order item, including sales and delivery metrics, linking to customer, product, and seller dimensions"
+    },
+    {
+      "name": "dim_customers",
+      "role": "dimension",
+      "purpose": "Describes customer entities, including their unique identifiers and geographic information"
+    },
+    {
+      "name": "dim_date",
+      "role": "dimension",
+      "purpose": "Provides date-related information, including timestamps and calendar attributes, to support time-series analysis"
+    },
+    {
+      "name": "dim_products",
+      "role": "dimension",
+      "purpose": "Details product information, such as categories and dimensions, to support product performance analysis"
+    },
+    {
+      "name": "dim_sellers",
+      "role": "dimension",
+      "purpose": "Describes seller entities, including their unique identifiers and geographic information, to support seller performance analysis"
+    }
+  ],
+  "relationships": [
+    {
+      "from_table": "orders",
+      "from_column": "customer_id",
+      "to_table": "customers",
+      "to_column": "customer_id"
+    },
+    {
+      "from_table": "order_items",
+      "from_column": "order_id",
+      "to_table": "orders",
+      "to_column": "order_id"
+    },
+    {
+      "from_table": "order_items",
+      "from_column": "product_id",
+      "to_table": "products",
+      "to_column": "product_id"
+    },
+    {
+      "from_table": "order_items",
+      "from_column": "seller_id",
+      "to_table": "sellers",
+      "to_column": "seller_id"
+    },
+    {
+      "from_table": "payments",
+      "from_column": "order_id",
+      "to_table": "orders",
+      "to_column": "order_id"
+    },
+    {
+      "from_table": "reviews",
+      "from_column": "order_id",
+      "to_table": "orders",
+      "to_column": "order_id"
+    }
+  ],
+  "key_insights": [
+    "Which regions drive the most revenue?",
+    "What is the average delivery time for orders?",
+    "How does product category impact sales volume?",
+    "What is the customer satisfaction level based on review scores?",
+    "Which payment methods are most frequently used?",
+    "What is the correlation between order total value and delivery days?"
+  ],
+  "suggested_kpis": [
+    "Total revenue by region",
+    "Average delivery time",
+    "Top-selling product categories",
+    "Customer satisfaction rate",
+    "Payment method usage percentage"
+  ],
+  "business_use_cases": [
+    "Marketing team uses this data to target regions with high revenue potential.",
+    "Supply chain team analyzes delivery times to optimize logistics.",
+    "Product management team identifies top-selling categories to inform inventory decisions.",
+    "Customer service team monitors satisfaction levels to improve customer experience.",
+    "Finance team tracks payment method usage to forecast cash flow."
+  ],
+  "profile": {
+    "tables": [
+      {
+        "name": "dim_customers",
+        "row_count": 99441,
+        "column_count": 5,
+        "columns": [
+          {
+            "name": "customer_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 99441
+          },
+          {
+            "name": "customer_unique_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 96096
+          },
+          {
+            "name": "customer_zip_code_prefix",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 14994
+          },
+          {
+            "name": "customer_city",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 4119
+          },
+          {
+            "name": "customer_state",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 27
+          }
+        ]
+      },
+      {
+        "name": "dim_date",
+        "row_count": 774,
+        "column_count": 8,
+        "columns": [
+          {
+            "name": "date_id",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 774,
+            "min": "20160904",
+            "max": "20181017"
+          },
+          {
+            "name": "date",
+            "type": "TIMESTAMP_NS",
+            "null_pct": 0.0,
+            "distinct_count": 774,
+            "min": "2016-09-04 00:00:00",
+            "max": "2018-10-17 00:00:00"
+          },
+          {
+            "name": "year",
+            "type": "INTEGER",
+            "null_pct": 0.0,
+            "distinct_count": 3,
+            "min": "2016",
+            "max": "2018"
+          },
+          {
+            "name": "month",
+            "type": "INTEGER",
+            "null_pct": 0.0,
+            "distinct_count": 12,
+            "min": "1",
+            "max": "12"
+          },
+          {
+            "name": "day",
+            "type": "INTEGER",
+            "null_pct": 0.0,
+            "distinct_count": 31,
+            "min": "1",
+            "max": "31"
+          },
+          {
+            "name": "quarter",
+            "type": "INTEGER",
+            "null_pct": 0.0,
+            "distinct_count": 4,
+            "min": "1",
+            "max": "4"
+          },
+          {
+            "name": "weekday_name",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 7
+          },
+          {
+            "name": "is_weekend",
+            "type": "BOOLEAN",
+            "null_pct": 0.0,
+            "distinct_count": 2
+          }
+        ]
+      },
+      {
+        "name": "dim_products",
+        "row_count": 32951,
+        "column_count": 7,
+        "columns": [
+          {
+            "name": "product_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 32951
+          },
+          {
+            "name": "product_category_name_english",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 74
+          },
+          {
+            "name": "product_weight_g",
+            "type": "DOUBLE",
+            "null_pct": 0.0,
+            "distinct_count": 2204,
+            "min": "0.0",
+            "max": "40425.0"
+          },
+          {
+            "name": "product_length_cm",
+            "type": "DOUBLE",
+            "null_pct": 0.0,
+            "distinct_count": 99,
+            "min": "7.0",
+            "max": "105.0"
+          },
+          {
+            "name": "product_height_cm",
+            "type": "DOUBLE",
+            "null_pct": 0.0,
+            "distinct_count": 102,
+            "min": "2.0",
+            "max": "105.0"
+          },
+          {
+            "name": "product_width_cm",
+            "type": "DOUBLE",
+            "null_pct": 0.0,
+            "distinct_count": 95,
+            "min": "6.0",
+            "max": "118.0"
+          },
+          {
+            "name": "product_photos_qty",
+            "type": "DOUBLE",
+            "null_pct": 1.9,
+            "distinct_count": 19,
+            "min": "1.0",
+            "max": "20.0"
+          }
+        ]
+      },
+      {
+        "name": "dim_sellers",
+        "row_count": 3095,
+        "column_count": 4,
+        "columns": [
+          {
+            "name": "seller_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 3095
+          },
+          {
+            "name": "seller_zip_code_prefix",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 2246
+          },
+          {
+            "name": "seller_city",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 611
+          },
+          {
+            "name": "seller_state",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 23
+          }
+        ]
+      },
+      {
+        "name": "fact_order_items",
+        "row_count": 112650,
+        "column_count": 17,
+        "columns": [
+          {
+            "name": "order_item_sk",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 112650,
+            "min": "1",
+            "max": "112650"
+          },
+          {
+            "name": "order_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 98666
+          },
+          {
+            "name": "order_item_seq",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 21,
+            "min": "1",
+            "max": "21"
+          },
+          {
+            "name": "customer_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 98666
+          },
+          {
+            "name": "product_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 32951
+          },
+          {
+            "name": "seller_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 3095
+          },
+          {
+            "name": "date_id",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 616,
+            "min": "20160904",
+            "max": "20180903"
+          },
+          {
+            "name": "price",
+            "type": "DOUBLE",
+            "null_pct": 0.0,
+            "distinct_count": 5968,
+            "min": "0.85",
+            "max": "6735.0"
+          },
+          {
+            "name": "freight_value",
+            "type": "DOUBLE",
+            "null_pct": 0.0,
+            "distinct_count": 6999,
+            "min": "0.0",
+            "max": "409.68"
+          },
+          {
+            "name": "order_total_value",
+            "type": "DOUBLE",
+            "null_pct": 0.0,
+            "distinct_count": 29149,
+            "min": "6.08",
+            "max": "6929.31"
+          },
+          {
+            "name": "total_payment_value",
+            "type": "DOUBLE",
+            "null_pct": 0.0,
+            "distinct_count": 27845,
+            "min": "9.59",
+            "max": "13664.08"
+          },
+          {
+            "name": "primary_payment_type",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 4
+          },
+          {
+            "name": "payment_installments_max",
+            "type": "DOUBLE",
+            "null_pct": 0.0,
+            "distinct_count": 24,
+            "min": "0.0",
+            "max": "24.0"
+          },
+          {
+            "name": "review_score",
+            "type": "DOUBLE",
+            "null_pct": 1.3,
+            "distinct_count": 9,
+            "min": "1.0",
+            "max": "5.0"
+          },
+          {
+            "name": "order_status",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 7
+          },
+          {
+            "name": "delivery_days",
+            "type": "DOUBLE",
+            "null_pct": 2.2,
+            "distinct_count": 146,
+            "min": "0.0",
+            "max": "209.0"
+          },
+          {
+            "name": "delivered_late",
+            "type": "BOOLEAN",
+            "null_pct": 0.0,
+            "distinct_count": 2
+          }
+        ]
+      }
+    ],
+    "total_rows": 248911,
+    "total_tables": 5,
+    "warehouse_size_bytes": 45625344
+  },
+  "pipeline_steps": [
+    {
+      "name": "Ingest",
+      "detail": "CSV/Excel upload or live MySQL connection, staged per-warehouse (MongoDB + local)"
+    },
+    {
+      "name": "Extract",
+      "detail": "Schema validation, dtype inference, date parsing"
+    },
+    {
+      "name": "Clean",
+      "detail": "Deduplication, missing-value handling, outlier flagging"
+    },
+    {
+      "name": "Transform",
+      "detail": "Star schema (Olist-shaped) or as-is tables with inferred relationships (any other dataset)"
+    },
+    {
+      "name": "Load",
+      "detail": "Indexed load into DuckDB, replacing any prior build of this warehouse"
+    },
+    {
+      "name": "AI Layer",
+      "detail": "Ollama-generated blueprint (roles, insights, KPIs) and dashboard (KPIs, charts, grounded explanations)"
+    }
+  ],
+  "tech_stack": {
+    "Backend": "Flask (Python)",
+    "Warehouse": "DuckDB",
+    "Sources": "MongoDB (GridFS) for file storage, MySQL for live database connections",
+    "AI / LLM": "Ollama, local inference (qwen2.5:7b)",
+    "Visualization": "Chart.js (dashboard), vis.js (schema graph)"
+  }
+}

@@ -1,0 +1,151 @@
+store_id,store_name,city,state,region,pincode,store_type,store_opening_date
+STR0001,Croma - Pune - Mall,Pune,Maharashtra,West,569132,Mall,2023-02-23
+STR0002,Croma - Bhubaneswar - Mall,Bhubaneswar,Odisha,East,690353,Mall,2022-08-30
+STR0003,Croma - Coimbatore - High,Coimbatore,Tamil Nadu,South,660588,High Street,2016-10-31
+STR0004,Croma - Jaipur - High,Jaipur,Rajasthan,North,210242,High Street,2010-05-05
+STR0005,Croma - Chandigarh - High,Chandigarh,Chandigarh,North,725411,High Street,2018-03-04
+STR0006,Croma - Guwahati - High,Guwahati,Assam,East,509371,High Street,2017-08-07
+STR0007,Croma - Pune - Mall,Pune,Maharashtra,West,350698,Mall,2012-01-12
+STR0008,Croma - Visakhapatnam - Standalone,Visakhapatnam,Andhra Pradesh,South,493097,Standalone Big Box,2018-09-05
+STR0009,Croma - Surat - Mall,Surat,Gujarat,West,830403,Mall,2021-07-05
+STR0010,Croma - Pune - Mall,Pune,Maharashtra,West,748892,Mall,2011-06-14
+STR0011,Croma - Bengaluru - Mall,Bengaluru,Karnataka,South,731106,Mall,2019-11-26
+STR0012,Croma - Raipur - High,Raipur,Chhattisgarh,Central,454786,High Street,2011-12-03
+STR0013,Croma - Kolkata - High,Kolkata,West Bengal,East,694183,High Street,2020-04-02
+STR0014,Croma - Kolkata - Mall,Kolkata,West Bengal,East,396892,Mall,2015-09-27
+STR0015,Croma - Mysuru - High,Mysuru,Karnataka,South,621194,High Street,2010-02-02
+STR0016,Croma - Bhubaneswar - Mall,Bhubaneswar,Odisha,East,586475,Mall,2023-03-25
+STR0017,Croma - Bengaluru - High,Bengaluru,Karnataka,South,296101,High Street,2012-04-09
+STR0018,Croma - Nagpur - Mall,Nagpur,Maharashtra,West,308516,Mall,2018-02-28
+STR0019,Croma - Guwahati - Mall,Guwahati,Assam,East,155545,Mall,2012-06-26
+STR0020,Croma - Jaipur - Mall,Jaipur,Rajasthan,North,214128,Mall,2022-10-10
+STR0021,Croma - Bengaluru - High,Bengaluru,Karnataka,South,433046,High Street,2020-02-09
+STR0022,Croma - Lucknow - Mall,Lucknow,Uttar Pradesh,North,466019,Mall,2021-01-04
+STR0023,Croma - Ahmedabad - Mall,Ahmedabad,Gujarat,West,233015,Mall,2015-12-01
+STR0024,Croma - Indore - Mall,Indore,Madhya Pradesh,Central,420583,Mall,2016-05-25
+STR0025,Croma - Bhubaneswar - Standalone,Bhubaneswar,Odisha,East,560113,Standalone Big Box,2018-09-07
+STR0026,Croma - Coimbatore - Standalone,Coimbatore,Tamil Nadu,South,283265,Standalone Big Box,2020-09-28
+STR0027,Croma - Chandigarh - High,Chandigarh,Chandigarh,North,361987,High Street,2021-08-05
+STR0028,Croma - Patna - Mall,Patna,Bihar,East,383797,Mall,2010-03-31
+STR0029,Croma - Chennai - Standalone,Chennai,Tamil Nadu,South,486266,Standalone Big Box,2019-01-31
+STR0030,Croma - Jaipur - High,Jaipur,Rajasthan,North,382963,High Street,2011-06-30
+STR0031,Croma - Jaipur - High,Jaipur,Rajasthan,North,659024,High Street,2013-12-10
+STR0032,Croma - Surat - Mall,Surat,Gujarat,West,353985,Mall,2021-05-10
+STR0033,Croma - Pune - Mall,Pune,Maharashtra,West,433254,Mall,2013-06-06
+STR0034,Croma - Chennai - Mall,Chennai,Tamil Nadu,South,392701,Mall,2020-11-28
+STR0035,Croma - Ranchi - Standalone,Ranchi,Jharkhand,East,246273,Standalone Big Box,2016-05-04
+STR0036,Croma - Thane - High,Thane,Maharashtra,West,620879,High Street,2013-03-09
+STR0037,Croma - Guwahati - Mall,Guwahati,Assam,East,285408,Mall,2014-07-30
+STR0038,Croma - Patna - Mall,Patna,Bihar,East,331173,Mall,2017-04-07
+STR0039,Croma - Delhi - High,Delhi,Delhi,North,700601,High Street,2020-06-22
+STR0040,Croma - Kochi - Mall,Kochi,Kerala,South,816900,Mall,2018-04-19
+STR0041,Croma - Nashik - Standalone,Nashik,Maharashtra,West,609779,Standalone Big Box,2022-10-11
+STR0042,Croma - Kolkata - High,Kolkata,West Bengal,East,792680,High Street,2021-11-17
+STR0043,Croma - Mysuru - High,Mysuru,Karnataka,South,746373,High Street,2020-04-24
+STR0044,Croma - Gurugram - Mall,Gurugram,Haryana,North,468279,Mall,2018-04-04
+STR0045,Croma - Pune - High,Pune,Maharashtra,West,683867,High Street,2013-12-20
+STR0046,Croma - Raipur - High,Raipur,Chhattisgarh,Central,354630,High Street,2015-08-25
+STR0047,Croma - Jaipur - High,Jaipur,Rajasthan,North,453071,High Street,2011-08-18
+STR0048,Croma - Ranchi - Mall,Ranchi,Jharkhand,East,508899,Mall,2015-02-14
+STR0049,Croma - Visakhapatnam - Mall,Visakhapatnam,Andhra Pradesh,South,825568,Mall,2022-09-07
+STR0050,Croma - Bhubaneswar - Mall,Bhubaneswar,Odisha,East,742178,Mall,2015-10-31
+STR0051,Croma - Kolkata - High,Kolkata,West Bengal,East,474494,High Street,2011-07-23
+STR0052,Croma - Ahmedabad - Mall,Ahmedabad,Gujarat,West,596178,Mall,2018-12-04
+STR0053,Croma - Gurugram - Mall,Gurugram,Haryana,North,260756,Mall,2023-03-07
+STR0054,Croma - Kanpur - Mall,Kanpur,Uttar Pradesh,North,709272,Mall,2021-11-16
+STR0055,Croma - Kanpur - High,Kanpur,Uttar Pradesh,North,522014,High Street,2013-10-02
+STR0056,Croma - Thane - Mall,Thane,Maharashtra,West,506879,Mall,2016-03-19
+STR0057,Croma - Chennai - Standalone,Chennai,Tamil Nadu,South,680882,Standalone Big Box,2017-04-09
+STR0058,Croma - Nashik - High,Nashik,Maharashtra,West,581524,High Street,2013-05-24
+STR0059,Croma - Kolkata - Mall,Kolkata,West Bengal,East,163988,Mall,2013-09-05
+STR0060,Croma - Visakhapatnam - High,Visakhapatnam,Andhra Pradesh,South,324676,High Street,2013-03-29
+STR0061,Croma - Indore - Mall,Indore,Madhya Pradesh,Central,241656,Mall,2023-08-13
+STR0062,Croma - Kolkata - Standalone,Kolkata,West Bengal,East,657496,Standalone Big Box,2020-03-19
+STR0063,Croma - Gurugram - High,Gurugram,Haryana,North,136185,High Street,2021-07-06
+STR0064,Croma - Raipur - High,Raipur,Chhattisgarh,Central,260792,High Street,2021-03-06
+STR0065,Croma - Chandigarh - Mall,Chandigarh,Chandigarh,North,555097,Mall,2023-02-17
+STR0066,Croma - Noida - High,Noida,Uttar Pradesh,North,627625,High Street,2011-06-11
+STR0067,Croma - Indore - High,Indore,Madhya Pradesh,Central,484963,High Street,2022-01-26
+STR0068,Croma - Lucknow - Standalone,Lucknow,Uttar Pradesh,North,751236,Standalone Big Box,2010-11-29
+STR0069,Croma - Pune - High,Pune,Maharashtra,West,794611,High Street,2016-07-05
+STR0070,Croma - Kanpur - High,Kanpur,Uttar Pradesh,North,208417,High Street,2018-02-20
+STR0071,Croma - Bhubaneswar - Mall,Bhubaneswar,Odisha,East,819621,Mall,2014-11-25
+STR0072,Croma - Ahmedabad - Mall,Ahmedabad,Gujarat,West,567713,Mall,2012-01-01
+STR0073,Croma - Jaipur - High,Jaipur,Rajasthan,North,583984,High Street,2012-08-19
+STR0074,Croma - Nagpur - Mall,Nagpur,Maharashtra,West,180847,Mall,2021-04-16
+STR0075,Croma - Visakhapatnam - Mall,Visakhapatnam,Andhra Pradesh,South,573295,Mall,2014-05-13
+STR0076,Croma - Kanpur - Standalone,Kanpur,Uttar Pradesh,North,650659,Standalone Big Box,2014-04-01
+STR0077,Croma - Noida - Standalone,Noida,Uttar Pradesh,North,542690,Standalone Big Box,2022-08-22
+STR0078,Croma - Surat - Mall,Surat,Gujarat,West,172948,Mall,2011-12-21
+STR0079,Croma - Chennai - High,Chennai,Tamil Nadu,South,499805,High Street,2022-07-13
+STR0080,Croma - Visakhapatnam - Mall,Visakhapatnam,Andhra Pradesh,South,807276,Mall,2022-08-10
+STR0081,Croma - Bhopal - High,Bhopal,Madhya Pradesh,Central,648946,High Street,2018-03-12
+STR0082,Croma - Jaipur - Mall,Jaipur,Rajasthan,North,212369,Mall,2012-04-07
+STR0083,Croma - Nashik - High,Nashik,Maharashtra,West,825155,High Street,2012-02-19
+STR0084,Croma - Patna - High,Patna,Bihar,East,824366,High Street,2013-11-24
+STR0085,Croma - Kochi - High,Kochi,Kerala,South,236200,High Street,2017-11-27
+STR0086,Croma - Mysuru - Mall,Mysuru,Karnataka,South,706659,Mall,2012-02-08
+STR0087,Croma - Pune - Standalone,Pune,Maharashtra,West,413005,Standalone Big Box,2016-03-28
+STR0088,Croma - Noida - Mall,Noida,Uttar Pradesh,North,552294,Mall,2011-08-01
+STR0089,Croma - Bhubaneswar - Mall,Bhubaneswar,Odisha,East,441664,Mall,2017-05-25
+STR0090,Croma - Patna - High,Patna,Bihar,East,693055,High Street,2010-04-16
+STR0091,Croma - Jaipur - Mall,Jaipur,Rajasthan,North,852512,Mall,2019-09-16
+STR0092,Croma - Patna - Standalone,Patna,Bihar,East,702361,Standalone Big Box,2010-10-04
+STR0093,Croma - Guwahati - Standalone,Guwahati,Assam,East,803872,Standalone Big Box,2012-09-01
+STR0094,Croma - Lucknow - Mall,Lucknow,Uttar Pradesh,North,814791,Mall,2012-05-23
+STR0095,Croma - Ranchi - Standalone,Ranchi,Jharkhand,East,177129,Standalone Big Box,2021-05-17
+STR0096,Croma - Delhi - Mall,Delhi,Delhi,North,298771,Mall,2010-09-24
+STR0097,Croma - Vadodara - High,Vadodara,Gujarat,West,647784,High Street,2015-11-17
+STR0098,Croma - Visakhapatnam - Mall,Visakhapatnam,Andhra Pradesh,South,549607,Mall,2018-02-03
+STR0099,Croma - Coimbatore - Standalone,Coimbatore,Tamil Nadu,South,147359,Standalone Big Box,2017-01-23
+STR0100,Croma - Nashik - Mall,Nashik,Maharashtra,West,180812,Mall,2019-04-27
+STR0101,Croma - Patna - Mall,Patna,Bihar,East,497808,Mall,2020-12-29
+STR0102,Croma - Ahmedabad - Mall,Ahmedabad,Gujarat,West,569044,Mall,2015-05-23
+STR0103,Croma - Patna - Standalone,Patna,Bihar,East,234951,Standalone Big Box,2021-05-04
+STR0104,Croma - Mumbai - Standalone,Mumbai,Maharashtra,West,237613,Standalone Big Box,2014-05-09
+STR0105,Croma - Bhubaneswar - High,Bhubaneswar,Odisha,East,206359,High Street,2023-06-24
+STR0106,Croma - Bhubaneswar - Standalone,Bhubaneswar,Odisha,East,530889,Standalone Big Box,2016-11-27
+STR0107,Croma - Bhubaneswar - Standalone,Bhubaneswar,Odisha,East,115851,Standalone Big Box,2020-01-29
+STR0108,Croma - Coimbatore - High,Coimbatore,Tamil Nadu,South,536461,High Street,2021-12-24
+STR0109,Croma - Kanpur - Mall,Kanpur,Uttar Pradesh,North,464567,Mall,2020-11-07
+STR0110,Croma - Mysuru - High,Mysuru,Karnataka,South,457159,High Street,2021-08-26
+STR0111,Croma - Delhi - High,Delhi,Delhi,North,616061,High Street,2017-05-06
+STR0112,Croma - Bhubaneswar - Mall,Bhubaneswar,Odisha,East,499361,Mall,2010-08-06
+STR0113,Croma - Chennai - Mall,Chennai,Tamil Nadu,South,652173,Mall,2016-10-01
+STR0114,Croma - Jaipur - High,Jaipur,Rajasthan,North,679123,High Street,2012-06-26
+STR0115,Croma - Bengaluru - Mall,Bengaluru,Karnataka,South,795488,Mall,2022-03-04
+STR0116,Croma - Hyderabad - Standalone,Hyderabad,Telangana,South,705438,Standalone Big Box,2013-03-29
+STR0117,Croma - Thane - Mall,Thane,Maharashtra,West,495692,Mall,2013-02-14
+STR0118,Croma - Nashik - Mall,Nashik,Maharashtra,West,476655,Mall,2013-05-31
+STR0119,Croma - Vadodara - Standalone,Vadodara,Gujarat,West,285603,Standalone Big Box,2018-10-18
+STR0120,Croma - Nagpur - Mall,Nagpur,Maharashtra,West,556698,Mall,2017-10-27
+STR0121,Croma - Jaipur - Mall,Jaipur,Rajasthan,North,213656,Mall,2022-12-28
+STR0122,Croma - Visakhapatnam - High,Visakhapatnam,Andhra Pradesh,South,803771,High Street,2015-09-13
+STR0123,Croma - Coimbatore - Standalone,Coimbatore,Tamil Nadu,South,739558,Standalone Big Box,2013-11-12
+STR0124,Croma - Kanpur - Mall,Kanpur,Uttar Pradesh,North,199202,Mall,2010-09-04
+STR0125,Croma - Guwahati - Mall,Guwahati,Assam,East,695538,Mall,2010-02-05
+STR0126,Croma - Chennai - High,Chennai,Tamil Nadu,South,197243,High Street,2015-02-12
+STR0127,Croma - Pune - Standalone,Pune,Maharashtra,West,647313,Standalone Big Box,2022-09-04
+STR0128,Croma - Kolkata - High,Kolkata,West Bengal,East,175344,High Street,2017-03-03
+STR0129,Croma - Hyderabad - Mall,Hyderabad,Telangana,South,473705,Mall,2022-03-26
+STR0130,Croma - Coimbatore - Mall,Coimbatore,Tamil Nadu,South,600109,Mall,2011-05-24
+STR0131,Croma - Chennai - Mall,Chennai,Tamil Nadu,South,652965,Mall,2011-04-12
+STR0132,Croma - Chennai - Mall,Chennai,Tamil Nadu,South,421864,Mall,2021-05-30
+STR0133,Croma - Pune - High,Pune,Maharashtra,West,796610,High Street,2011-06-18
+STR0134,Croma - Chennai - Mall,Chennai,Tamil Nadu,South,686870,Mall,2010-09-17
+STR0135,Croma - Bhubaneswar - High,Bhubaneswar,Odisha,East,265158,High Street,2015-07-14
+STR0136,Croma - Noida - High,Noida,Uttar Pradesh,North,610068,High Street,2022-08-30
+STR0137,Croma - Kochi - High,Kochi,Kerala,South,654249,High Street,2019-06-09
+STR0138,Croma - Mumbai - Mall,Mumbai,Maharashtra,West,358561,Mall,2011-05-11
+STR0139,Croma - Gurugram - Standalone,Gurugram,Haryana,North,659983,Standalone Big Box,2021-06-17
+STR0140,Croma - Jaipur - High,Jaipur,Rajasthan,North,779284,High Street,2021-07-19
+STR0141,Croma - Raipur - High,Raipur,Chhattisgarh,Central,718751,High Street,2020-12-17
+STR0142,Croma - Surat - Mall,Surat,Gujarat,West,678087,Mall,2022-05-11
+STR0143,Croma - Delhi - Mall,Delhi,Delhi,North,582701,Mall,2013-04-14
+STR0144,Croma - Chandigarh - Standalone,Chandigarh,Chandigarh,North,311549,Standalone Big Box,2023-05-30
+STR0145,Croma - Raipur - Mall,Raipur,Chhattisgarh,Central,702442,Mall,2014-05-23
+STR0146,Croma - Guwahati - Mall,Guwahati,Assam,East,381324,Mall,2020-12-24
+STR0147,Croma - Thane - High,Thane,Maharashtra,West,506487,High Street,2017-12-06
+STR0148,Croma - Vadodara - High,Vadodara,Gujarat,West,344258,High Street,2020-09-02
+STR0149,Croma - Patna - Standalone,Patna,Bihar,East,343198,Standalone Big Box,2018-08-06
+STR0150,Croma - Thane - Mall,Thane,Maharashtra,West,227421,Mall,2018-10-18

@@ -1,0 +1,148 @@
+product_id,product_name,category,sub_category,brand,mrp,weight_kg,warranty_years,launch_date
+PRD00001,Samsung Galaxy S24,Mobiles,Flagship,Samsung,89032,23.41,1,2021-11-20
+PRD00002,Samsung Galaxy S24 (128GB),Mobiles,Flagship,Samsung,75947,9.64,1,2022-10-18
+PRD00003,Samsung Galaxy S24 (256GB),Mobiles,Flagship,Samsung,69399,23.41,1,2020-11-16
+PRD00004,Samsung Galaxy M14,Mobiles,Budget,Samsung,15120,12.04,1,2020-12-16
+PRD00005,Samsung Galaxy M14 (128GB),Mobiles,Budget,Samsung,14607,17.97,3,2023-05-28
+PRD00006,Samsung Galaxy M14 (256GB),Mobiles,Budget,Samsung,15804,3.05,1,2023-06-05
+PRD00007,Samsung Galaxy A55,Mobiles,Mid-range,Samsung,39145,3.14,2,2021-06-27
+PRD00008,Samsung Galaxy A55 (128GB),Mobiles,Mid-range,Samsung,37117,17.18,1,2019-01-24
+PRD00009,Samsung Galaxy A55 (256GB),Mobiles,Mid-range,Samsung,33668,20.65,1,2021-03-30
+PRD00010,Apple iPhone 15,Mobiles,Flagship,Apple,75906,11.52,1,2021-04-20
+PRD00011,Apple iPhone 15 (128GB),Mobiles,Flagship,Apple,70240,22.97,1,2022-11-03
+PRD00012,Apple iPhone 15 (256GB),Mobiles,Flagship,Apple,85625,2.85,1,2024-03-09
+PRD00013,Apple iPhone 14,Mobiles,Flagship,Apple,60661,7.17,3,2023-01-18
+PRD00014,Apple iPhone 14 (128GB),Mobiles,Flagship,Apple,72553,2.75,2,2024-03-13
+PRD00015,Apple iPhone 14 (256GB),Mobiles,Flagship,Apple,60358,16.29,2,2022-03-30
+PRD00016,OnePlus Nord 4,Mobiles,Mid-range,OnePlus,30451,22.44,3,2019-02-25
+PRD00017,OnePlus Nord 4 (128GB),Mobiles,Mid-range,OnePlus,31228,3.66,1,2023-06-12
+PRD00018,OnePlus Nord 4 (256GB),Mobiles,Mid-range,OnePlus,33883,5.04,1,2023-09-27
+PRD00019,OnePlus 11R,Mobiles,Mid-range,OnePlus,37310,1.0,2,2019-01-11
+PRD00020,OnePlus 11R (128GB),Mobiles,Mid-range,OnePlus,35042,1.39,3,2022-02-25
+PRD00021,OnePlus 11R (256GB),Mobiles,Mid-range,OnePlus,42840,6.04,3,2020-06-30
+PRD00022,Xiaomi Redmi Note 13,Mobiles,Budget,Xiaomi,21246,1.53,2,2023-03-02
+PRD00023,Xiaomi Redmi Note 13 (128GB),Mobiles,Budget,Xiaomi,21840,19.33,3,2023-05-27
+PRD00024,Xiaomi Redmi Note 13 (256GB),Mobiles,Budget,Xiaomi,20490,20.97,1,2019-03-18
+PRD00025,Realme Narzo 70,Mobiles,Budget,Realme,15824,3.21,1,2022-08-18
+PRD00026,Realme Narzo 70 (128GB),Mobiles,Budget,Realme,16017,18.66,1,2022-04-12
+PRD00027,Realme Narzo 70 (256GB),Mobiles,Budget,Realme,14343,3.96,3,2023-03-26
+PRD00028,Vivo V29,Mobiles,Mid-range,Vivo,33407,4.91,1,2020-05-29
+PRD00029,Vivo V29 (128GB),Mobiles,Mid-range,Vivo,29598,24.51,2,2022-11-24
+PRD00030,Vivo V29 (256GB),Mobiles,Mid-range,Vivo,32668,1.46,1,2022-03-16
+PRD00031,Oppo Reno 11,Mobiles,Mid-range,Oppo,30025,22.12,1,2021-05-21
+PRD00032,Oppo Reno 11 (128GB),Mobiles,Mid-range,Oppo,34257,4.41,1,2019-06-24
+PRD00033,Oppo Reno 11 (256GB),Mobiles,Mid-range,Oppo,34621,24.5,1,2022-01-29
+PRD00034,Google Pixel 8,Mobiles,Flagship,Google,66877,19.62,1,2022-04-24
+PRD00035,Google Pixel 8 (128GB),Mobiles,Flagship,Google,73090,3.71,1,2020-04-16
+PRD00036,Google Pixel 8 (256GB),Mobiles,Flagship,Google,74190,7.6,1,2022-01-03
+PRD00037,Dell Inspiron 15,Laptops,Mainstream,Dell,51600,16.27,2,2021-04-21
+PRD00038,Dell Inspiron 15 (128GB),Laptops,Mainstream,Dell,58049,3.8,1,2021-08-23
+PRD00039,Dell Inspiron 15 (256GB),Laptops,Mainstream,Dell,54053,11.91,1,2019-09-03
+PRD00040,HP Pavilion 14,Laptops,Mainstream,HP,51787,3.44,3,2020-06-12
+PRD00041,HP Pavilion 14 (128GB),Laptops,Mainstream,HP,51400,10.75,1,2023-02-01
+PRD00042,HP Pavilion 14 (256GB),Laptops,Mainstream,HP,59164,15.9,3,2021-02-21
+PRD00043,Lenovo ThinkPad E14,Laptops,Business,Lenovo,57761,5.52,1,2023-12-09
+PRD00044,Lenovo ThinkPad E14 (128GB),Laptops,Business,Lenovo,65589,7.99,3,2019-03-10
+PRD00045,Lenovo ThinkPad E14 (256GB),Laptops,Business,Lenovo,60375,11.91,1,2019-10-09
+PRD00046,Lenovo Legion 5,Laptops,Gaming,Lenovo,86767,14.35,1,2021-12-10
+PRD00047,Lenovo Legion 5 (128GB),Laptops,Gaming,Lenovo,97691,16.23,2,2022-01-20
+PRD00048,Lenovo Legion 5 (256GB),Laptops,Gaming,Lenovo,99572,7.97,1,2023-02-05
+PRD00049,Asus Vivobook 15,Laptops,Mainstream,Asus,45139,10.84,1,2021-10-03
+PRD00050,Asus Vivobook 15 (128GB),Laptops,Mainstream,Asus,49389,9.08,3,2021-09-01
+PRD00051,Asus Vivobook 15 (256GB),Laptops,Mainstream,Asus,52124,22.17,2,2019-09-01
+PRD00052,Asus ZenBook 14,Laptops,Premium,Asus,93026,12.64,2,2021-09-15
+PRD00053,Asus ZenBook 14 (128GB),Laptops,Premium,Asus,76718,7.93,2,2021-09-13
+PRD00054,Asus ZenBook 14 (256GB),Laptops,Premium,Asus,90934,12.4,1,2019-08-09
+PRD00055,Apple MacBook Air M2,Laptops,Premium,Apple,101397,21.07,1,2023-04-11
+PRD00056,Apple MacBook Air M2 (128GB),Laptops,Premium,Apple,101388,7.09,1,2020-09-26
+PRD00057,Apple MacBook Air M2 (256GB),Laptops,Premium,Apple,112188,7.92,1,2019-05-07
+PRD00058,Acer Aspire 7,Laptops,Mainstream,Acer,54654,0.47,1,2023-04-21
+PRD00059,Acer Aspire 7 (128GB),Laptops,Mainstream,Acer,54179,9.37,3,2022-09-09
+PRD00060,Acer Aspire 7 (256GB),Laptops,Mainstream,Acer,46996,15.06,2,2019-08-16
+PRD00061,MSI Katana 15,Laptops,Gaming,MSI,102790,23.96,1,2019-05-26
+PRD00062,MSI Katana 15 (128GB),Laptops,Gaming,MSI,119841,19.33,1,2020-08-13
+PRD00063,MSI Katana 15 (256GB),Laptops,Gaming,MSI,111970,17.66,2,2022-12-01
+PRD00064,Dell XPS 13,Laptops,Premium,Dell,125513,16.06,1,2019-01-21
+PRD00065,Dell XPS 13 (128GB),Laptops,Premium,Dell,136998,13.17,1,2021-06-05
+PRD00066,Dell XPS 13 (256GB),Laptops,Premium,Dell,116549,4.23,1,2023-05-08
+PRD00067,Samsung Crystal 4K 55in,Televisions,4K,Samsung,54044,13.94,3,2020-01-16
+PRD00068,LG OLED C3 55in,Televisions,OLED,LG,153562,24.76,2,2019-09-27
+PRD00069,Sony Bravia X75 43in,Televisions,4K,Sony,41022,9.88,1,2020-09-16
+PRD00070,Samsung QLED 50in,Televisions,QLED,Samsung,56199,18.91,1,2021-04-04
+PRD00071,Mi Y1S Pro 43in,Televisions,4K,Mi,27398,3.85,1,2020-08-05
+PRD00072,TCL 4K Ultra HD 65in,Televisions,4K,TCL,46808,22.69,3,2019-03-26
+PRD00073,Panasonic Smart TV 32in,Televisions,HD,Panasonic,16527,7.37,1,2020-01-05
+PRD00074,LG Double Door 260L,Refrigerators,Double Door,LG,29940,14.7,2,2021-07-26
+PRD00075,Samsung Single Door 190L,Refrigerators,Single Door,Samsung,17054,6.17,1,2023-05-17
+PRD00076,Whirlpool Triple Door 320L,Refrigerators,Triple Door,Whirlpool,44748,15.98,1,2022-05-18
+PRD00077,Godrej Frost Free 340L,Refrigerators,Frost Free,Godrej,37847,19.1,2,2022-03-12
+PRD00078,Haier Side by Side 580L,Refrigerators,Side by Side,Haier,65870,9.23,2,2021-10-22
+PRD00079,Panasonic Double Door 270L,Refrigerators,Double Door,Panasonic,33286,21.13,1,2020-09-21
+PRD00080,LG Front Load 7kg,Washing Machines,Front Load,LG,29894,19.24,2,2023-06-07
+PRD00081,Samsung Top Load 6.5kg,Washing Machines,Top Load,Samsung,17478,22.75,1,2020-08-02
+PRD00082,Whirlpool Semi-Automatic 7.5kg,Washing Machines,Semi-Automatic,Whirlpool,12760,21.27,1,2020-10-09
+PRD00083,IFB Front Load 8kg Inverter,Washing Machines,Front Load,IFB,39080,13.33,1,2021-09-09
+PRD00084,Bosch Front Load 7kg Inverter,Washing Machines,Front Load,Bosch,30628,10.02,3,2023-10-09
+PRD00085,Godrej Top Load 7kg,Washing Machines,Top Load,Godrej,17515,4.52,2,2019-01-17
+PRD00086,Voltas 1.5 Ton Split Inverter,Air Conditioners,Split,Voltas,36032,4.87,1,2019-02-17
+PRD00087,LG 1 Ton Window AC,Air Conditioners,Window,LG,31039,11.26,3,2021-03-09
+PRD00088,Daikin 1.5 Ton 5 Star Inverter,Air Conditioners,Split,Daikin,45152,15.0,1,2019-01-14
+PRD00089,Blue Star 2 Ton Split AC,Air Conditioners,Split,Blue Star,51739,17.61,1,2021-09-26
+PRD00090,Samsung 1.5 Ton Split Inverter,Air Conditioners,Split,Samsung,41436,24.55,3,2022-03-24
+PRD00091,Hitachi 1 Ton Split Inverter,Air Conditioners,Split,Hitachi,37274,19.06,1,2022-05-21
+PRD00092,boAt Rockerz 450 Headphones,Audio,Headphones,boAt,1751,18.05,1,2024-01-05
+PRD00093,boAt Rockerz 450 Headphones - Black,Audio,Headphones,boAt,1611,21.68,2,2019-05-21
+PRD00094,boAt Rockerz 450 Headphones - Silver,Audio,Headphones,boAt,1356,18.34,3,2021-04-16
+PRD00095,boAt Airdopes 141 Earbuds,Audio,Earbuds,boAt,1524,16.39,1,2021-03-03
+PRD00096,boAt Airdopes 141 Earbuds - Black,Audio,Earbuds,boAt,1684,24.62,1,2020-07-01
+PRD00097,boAt Airdopes 141 Earbuds - Silver,Audio,Earbuds,boAt,1610,18.77,2,2022-04-25
+PRD00098,JBL Flip 6 Speaker,Audio,Speaker,JBL,11038,3.18,1,2019-03-19
+PRD00099,JBL Flip 6 Speaker - Black,Audio,Speaker,JBL,11524,12.29,2,2023-07-21
+PRD00100,JBL Flip 6 Speaker - Silver,Audio,Speaker,JBL,12956,11.68,1,2024-02-02
+PRD00101,JBL Party Box 100W Speaker,Audio,Speaker,JBL,21208,19.86,1,2022-05-19
+PRD00102,JBL Party Box 100W Speaker - Black,Audio,Speaker,JBL,20423,13.93,1,2023-03-04
+PRD00103,JBL Party Box 100W Speaker - Silver,Audio,Speaker,JBL,21329,20.58,3,2020-03-28
+PRD00104,Sony WH-CH520 Headphones,Audio,Headphones,Sony,3036,9.38,3,2019-04-03
+PRD00105,Sony WH-CH520 Headphones - Black,Audio,Headphones,Sony,3368,16.92,1,2022-12-20
+PRD00106,Sony WH-CH520 Headphones - Silver,Audio,Headphones,Sony,3712,19.37,1,2023-07-03
+PRD00107,Bose SoundLink Mini Speaker,Audio,Speaker,Bose,17959,20.04,2,2020-12-26
+PRD00108,Bose SoundLink Mini Speaker - Black,Audio,Speaker,Bose,15194,5.94,1,2022-03-27
+PRD00109,Bose SoundLink Mini Speaker - Silver,Audio,Speaker,Bose,15933,0.21,3,2023-12-14
+PRD00110,Zebronics Party Speaker 60W,Audio,Speaker,Zebronics,5028,16.96,1,2019-02-26
+PRD00111,Zebronics Party Speaker 60W - Black,Audio,Speaker,Zebronics,5519,22.4,1,2022-03-06
+PRD00112,Zebronics Party Speaker 60W - Silver,Audio,Speaker,Zebronics,5342,6.02,1,2023-06-09
+PRD00113,Noise Buds VS104 Earbuds,Audio,Earbuds,Noise,1261,21.35,1,2023-09-11
+PRD00114,Noise Buds VS104 Earbuds - Black,Audio,Earbuds,Noise,1148,14.8,1,2021-01-24
+PRD00115,Noise Buds VS104 Earbuds - Silver,Audio,Earbuds,Noise,1056,22.18,1,2023-07-05
+PRD00116,Canon EOS 1500D DSLR,Cameras,DSLR,Canon,34312,2.21,2,2020-10-11
+PRD00117,Nikon D3500 DSLR,Cameras,DSLR,Nikon,38148,20.21,2,2021-10-10
+PRD00118,Sony Alpha A6400 Mirrorless,Cameras,Mirrorless,Sony,89981,7.48,2,2021-02-14
+PRD00119,GoPro Hero 12 Black,Cameras,Action Cam,GoPro,46272,14.41,1,2019-12-21
+PRD00120,Noise ColorFit Pro 4,Smart Watches,Fitness,Noise,2997,17.55,2,2022-02-04
+PRD00121,Noise ColorFit Pro 4 - Black,Smart Watches,Fitness,Noise,2059,22.89,1,2020-02-22
+PRD00122,Noise ColorFit Pro 4 - Silver,Smart Watches,Fitness,Noise,2496,3.45,1,2020-11-25
+PRD00123,boAt Wave Call,Smart Watches,Fitness,boAt,1540,5.13,1,2021-11-20
+PRD00124,boAt Wave Call - Black,Smart Watches,Fitness,boAt,1507,11.39,3,2022-04-20
+PRD00125,boAt Wave Call - Silver,Smart Watches,Fitness,boAt,1940,10.57,1,2023-08-14
+PRD00126,Apple Watch SE,Smart Watches,Premium,Apple,36714,18.82,1,2021-10-24
+PRD00127,Apple Watch SE - Black,Smart Watches,Premium,Apple,36863,22.44,1,2021-01-04
+PRD00128,Apple Watch SE - Silver,Smart Watches,Premium,Apple,31644,8.2,3,2023-09-24
+PRD00129,Samsung Galaxy Watch 6,Smart Watches,Premium,Samsung,28835,18.58,1,2020-02-14
+PRD00130,Samsung Galaxy Watch 6 - Black,Smart Watches,Premium,Samsung,30544,16.37,1,2020-07-22
+PRD00131,Samsung Galaxy Watch 6 - Silver,Smart Watches,Premium,Samsung,32127,8.13,1,2019-12-04
+PRD00132,Fire-Boltt Phoenix Pro,Smart Watches,Fitness,Fire-Boltt,1376,21.87,1,2020-06-22
+PRD00133,Fire-Boltt Phoenix Pro - Black,Smart Watches,Fitness,Fire-Boltt,1329,19.82,1,2022-01-16
+PRD00134,Fire-Boltt Phoenix Pro - Silver,Smart Watches,Fitness,Fire-Boltt,1691,11.02,3,2021-06-23
+PRD00135,Prestige Mixer Grinder 750W,Kitchen Appliances,Mixer,Prestige,3949,16.9,3,2020-04-30
+PRD00136,Philips Air Fryer 4.1L,Kitchen Appliances,Air Fryer,Philips,11443,22.57,1,2023-02-05
+PRD00137,Bajaj Induction Cooktop,Kitchen Appliances,Cooktop,Bajaj,2375,14.1,1,2020-08-29
+PRD00138,Kent RO Water Purifier,Kitchen Appliances,Purifier,Kent,12406,16.36,1,2023-12-21
+PRD00139,Butterfly OTG 25L,Kitchen Appliances,OTG,Butterfly,6558,10.88,1,2019-09-23
+PRD00140,Apple iPad 9th Gen,Tablets,Tablet,Apple,30178,24.0,2,2019-07-15
+PRD00141,Samsung Galaxy Tab A9,Tablets,Tablet,Samsung,15173,6.23,1,2021-12-23
+PRD00142,Lenovo Tab M10,Tablets,Tablet,Lenovo,15261,11.43,1,2021-09-07
+PRD00143,Xiaomi Redmi Pad SE,Tablets,Tablet,Xiaomi,15370,1.37,1,2023-06-07
+PRD00144,Sony PlayStation 5,Gaming,Console,Sony,50557,9.67,2,2019-04-26
+PRD00145,Microsoft Xbox Series S,Gaming,Console,Microsoft,39488,5.25,2,2024-01-31
+PRD00146,Logitech G502 Gaming Mouse,Gaming,Accessory,Logitech,3801,9.91,1,2021-03-02
+PRD00147,Razer BlackWidow Keyboard,Gaming,Accessory,Razer,9453,2.89,1,2021-02-27

@@ -1,0 +1,600 @@
+{
+  "generated_at": "2026-08-20T07:29:13.594218+00:00",
+  "overview": "This data warehouse contains detailed records of customer interactions, orders, and product reviews, along with dimensions that provide context such as customer details, product information, and dates. The warehouse is designed to support business intelligence and analytics to drive strategic decisions.",
+  "tables": [
+    {
+      "name": "croma_orders_dataset",
+      "role": "fact",
+      "purpose": "Tracks order transactions, linking customers, products, and stores to provide transactional insights."
+    },
+    {
+      "name": "croma_order_items_dataset",
+      "role": "fact",
+      "purpose": "Details individual items within orders, including quantities and prices, to analyze product sales and revenue."
+    },
+    {
+      "name": "croma_customers_dataset",
+      "role": "dimension",
+      "purpose": "Provides customer details to understand customer demographics and preferences."
+    },
+    {
+      "name": "croma_products_dataset",
+      "role": "dimension",
+      "purpose": "Contains product information to analyze sales performance and inventory."
+    },
+    {
+      "name": "croma_stores_dataset",
+      "role": "dimension",
+      "purpose": "Describes store locations and types to evaluate sales by geography and store type."
+    },
+    {
+      "name": "croma_date_dim",
+      "role": "dimension",
+      "purpose": "Offers date-related information to analyze sales trends by time periods."
+    },
+    {
+      "name": "croma_reviews_dataset",
+      "role": "dimension",
+      "purpose": "Captures customer feedback to gauge product satisfaction and identify areas for improvement."
+    }
+  ],
+  "relationships": [
+    {
+      "from_table": "croma_order_items_dataset",
+      "from_column": "order_id",
+      "to_table": "croma_orders_dataset",
+      "to_column": "order_id"
+    },
+    {
+      "from_table": "croma_order_items_dataset",
+      "from_column": "product_id",
+      "to_table": "croma_products_dataset",
+      "to_column": "product_id"
+    },
+    {
+      "from_table": "croma_orders_dataset",
+      "from_column": "customer_id",
+      "to_table": "croma_customers_dataset",
+      "to_column": "customer_id"
+    },
+    {
+      "from_table": "croma_orders_dataset",
+      "from_column": "store_id",
+      "to_table": "croma_stores_dataset",
+      "to_column": "store_id"
+    },
+    {
+      "from_table": "croma_reviews_dataset",
+      "from_column": "customer_id",
+      "to_table": "croma_customers_dataset",
+      "to_column": "customer_id"
+    },
+    {
+      "from_table": "croma_reviews_dataset",
+      "from_column": "product_id",
+      "to_table": "croma_products_dataset",
+      "to_column": "product_id"
+    }
+  ],
+  "key_insights": [
+    "Which regions drive the most revenue?",
+    "What is the average order value by customer segment?",
+    "How does sales performance vary by season and sale event?",
+    "Which products are the best sellers?",
+    "What is the customer satisfaction level based on product reviews?",
+    "How does customer behavior change over time?"
+  ],
+  "suggested_kpis": [
+    "Total revenue by region",
+    "Customer acquisition cost",
+    "Average order value",
+    "Customer lifetime value",
+    "Product return rate"
+  ],
+  "business_use_cases": [
+    "Marketing team uses this data to target specific regions and customer segments for promotions.",
+    "Sales team analyzes order data to identify best-selling products and optimize inventory.",
+    "Operations team reviews store performance to make decisions on store expansion or closure.",
+    "Product management uses reviews to improve product offerings and customer service.",
+    "Finance team tracks KPIs to measure the financial health and performance of the business."
+  ],
+  "profile": {
+    "tables": [
+      {
+        "name": "croma_customers_dataset",
+        "row_count": 50000,
+        "column_count": 12,
+        "columns": [
+          {
+            "name": "customer_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 50000
+          },
+          {
+            "name": "customer_name",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 2485
+          },
+          {
+            "name": "gender",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 2
+          },
+          {
+            "name": "age",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 52,
+            "min": "18",
+            "max": "69"
+          },
+          {
+            "name": "email",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 50000
+          },
+          {
+            "name": "phone",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 49997,
+            "min": "9100015776",
+            "max": "9999987730"
+          },
+          {
+            "name": "city",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 30
+          },
+          {
+            "name": "state",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 19
+          },
+          {
+            "name": "region",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 5
+          },
+          {
+            "name": "pincode",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 48380,
+            "min": "110001",
+            "max": "854987"
+          },
+          {
+            "name": "customer_segment",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 3
+          },
+          {
+            "name": "customer_since_date",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 2100
+          }
+        ]
+      },
+      {
+        "name": "croma_date_dim",
+        "row_count": 1826,
+        "column_count": 10,
+        "columns": [
+          {
+            "name": "date",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 1826
+          },
+          {
+            "name": "day",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 31,
+            "min": "1",
+            "max": "31"
+          },
+          {
+            "name": "month",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 12,
+            "min": "1",
+            "max": "12"
+          },
+          {
+            "name": "month_name",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 12
+          },
+          {
+            "name": "quarter",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 4,
+            "min": "1",
+            "max": "4"
+          },
+          {
+            "name": "year",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 5,
+            "min": "2021",
+            "max": "2025"
+          },
+          {
+            "name": "day_of_week",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 7
+          },
+          {
+            "name": "is_weekend",
+            "type": "BOOLEAN",
+            "null_pct": 0.0,
+            "distinct_count": 2
+          },
+          {
+            "name": "season",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 4
+          },
+          {
+            "name": "sale_event",
+            "type": "VARCHAR",
+            "null_pct": 72.6,
+            "distinct_count": 4
+          }
+        ]
+      },
+      {
+        "name": "croma_orders_dataset",
+        "row_count": 120000,
+        "column_count": 10,
+        "columns": [
+          {
+            "name": "order_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 120000
+          },
+          {
+            "name": "customer_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 45399
+          },
+          {
+            "name": "store_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 150
+          },
+          {
+            "name": "order_date",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 1826
+          },
+          {
+            "name": "delivery_date",
+            "type": "VARCHAR",
+            "null_pct": 16.0,
+            "distinct_count": 1832
+          },
+          {
+            "name": "order_channel",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 2
+          },
+          {
+            "name": "payment_method",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 7
+          },
+          {
+            "name": "order_status",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 5
+          },
+          {
+            "name": "season",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 4
+          },
+          {
+            "name": "sale_event",
+            "type": "VARCHAR",
+            "null_pct": 47.0,
+            "distinct_count": 4
+          }
+        ]
+      },
+      {
+        "name": "croma_order_items_dataset",
+        "row_count": 240406,
+        "column_count": 7,
+        "columns": [
+          {
+            "name": "order_item_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 240406
+          },
+          {
+            "name": "order_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 120000
+          },
+          {
+            "name": "product_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 147
+          },
+          {
+            "name": "quantity",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 3,
+            "min": "1",
+            "max": "3"
+          },
+          {
+            "name": "unit_price",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 147,
+            "min": "1056",
+            "max": "153562"
+          },
+          {
+            "name": "discount_pct",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 7,
+            "min": "0",
+            "max": "30"
+          },
+          {
+            "name": "total_amount",
+            "type": "DOUBLE",
+            "null_pct": 0.0,
+            "distinct_count": 3067,
+            "min": "739.2",
+            "max": "460686.0"
+          }
+        ]
+      },
+      {
+        "name": "croma_products_dataset",
+        "row_count": 147,
+        "column_count": 9,
+        "columns": [
+          {
+            "name": "product_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 147
+          },
+          {
+            "name": "product_name",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 147
+          },
+          {
+            "name": "category",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 12
+          },
+          {
+            "name": "sub_category",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 36
+          },
+          {
+            "name": "brand",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 45
+          },
+          {
+            "name": "mrp",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 147,
+            "min": "1056",
+            "max": "153562"
+          },
+          {
+            "name": "weight_kg",
+            "type": "DOUBLE",
+            "null_pct": 0.0,
+            "distinct_count": 143,
+            "min": "0.21",
+            "max": "24.76"
+          },
+          {
+            "name": "warranty_years",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 3,
+            "min": "1",
+            "max": "3"
+          },
+          {
+            "name": "launch_date",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 144
+          }
+        ]
+      },
+      {
+        "name": "croma_reviews_dataset",
+        "row_count": 55574,
+        "column_count": 7,
+        "columns": [
+          {
+            "name": "review_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 55574
+          },
+          {
+            "name": "order_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 55574
+          },
+          {
+            "name": "customer_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 33590
+          },
+          {
+            "name": "product_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 147
+          },
+          {
+            "name": "rating",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 5,
+            "min": "1",
+            "max": "5"
+          },
+          {
+            "name": "review_date",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 1843
+          },
+          {
+            "name": "review_text",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 14
+          }
+        ]
+      },
+      {
+        "name": "croma_stores_dataset",
+        "row_count": 150,
+        "column_count": 8,
+        "columns": [
+          {
+            "name": "store_id",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 150
+          },
+          {
+            "name": "store_name",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 69
+          },
+          {
+            "name": "city",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 30
+          },
+          {
+            "name": "state",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 19
+          },
+          {
+            "name": "region",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 5
+          },
+          {
+            "name": "pincode",
+            "type": "BIGINT",
+            "null_pct": 0.0,
+            "distinct_count": 150,
+            "min": "115851",
+            "max": "852512"
+          },
+          {
+            "name": "store_type",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 3
+          },
+          {
+            "name": "store_opening_date",
+            "type": "VARCHAR",
+            "null_pct": 0.0,
+            "distinct_count": 146
+          }
+        ]
+      }
+    ],
+    "total_rows": 468103,
+    "total_tables": 7,
+    "warehouse_size_bytes": 10498048
+  },
+  "pipeline_steps": [
+    {
+      "name": "Ingest",
+      "detail": "CSV/Excel upload or live MySQL connection, staged per-warehouse (MongoDB + local)"
+    },
+    {
+      "name": "Extract",
+      "detail": "Schema validation, dtype inference, date parsing"
+    },
+    {
+      "name": "Clean",
+      "detail": "Deduplication, missing-value handling, outlier flagging"
+    },
+    {
+      "name": "Transform",
+      "detail": "Star schema (Olist-shaped) or as-is tables with inferred relationships (any other dataset)"
+    },
+    {
+      "name": "Load",
+      "detail": "Indexed load into DuckDB, replacing any prior build of this warehouse"
+    },
+    {
+      "name": "AI Layer",
+      "detail": "Ollama-generated blueprint (roles, insights, KPIs) and dashboard (KPIs, charts, grounded explanations)"
+    }
+  ],
+  "tech_stack": {
+    "Backend": "Flask (Python)",
+    "Warehouse": "DuckDB",
+    "Sources": "MongoDB (GridFS) for file storage, MySQL for live database connections",
+    "AI / LLM": "Ollama, local inference (qwen2.5:7b)",
+    "Visualization": "Chart.js (dashboard), vis.js (schema graph)"
+  }
+}

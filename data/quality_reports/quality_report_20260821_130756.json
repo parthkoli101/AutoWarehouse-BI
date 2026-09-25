@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-08-21T13:07:56.740331",
+  "overall_quality_score": 98.8,
+  "tables": [
+    {
+      "table": "customers",
+      "rows": 99441,
+      "null_pct": 0.0,
+      "duplicate_pct": 0.0,
+      "outlier_pct": 0,
+      "quality_score": 100.0
+    },
+    {
+      "table": "orders",
+      "rows": 99441,
+      "null_pct": 0.62,
+      "duplicate_pct": 0.0,
+      "outlier_pct": 0,
+      "quality_score": 99.7
+    },
+    {
+      "table": "order_items",
+      "rows": 112650,
+      "null_pct": 0.0,
+      "duplicate_pct": 0.0,
+      "outlier_pct": 18.25,
+      "quality_score": 96.3
+    },
+    {
+      "table": "payments",
+      "rows": 103886,
+      "null_pct": 0.0,
+      "duplicate_pct": 0.0,
+      "outlier_pct": 7.68,
+      "quality_score": 98.5
+    },
+    {
+      "table": "reviews",
+      "rows": 98410,
+      "null_pct": 0.0,
+      "duplicate_pct": 0.0,
+      "outlier_pct": 0,
+      "quality_score": 100.0
+    },
+    {
+      "table": "products",
+      "rows": 32951,
+      "null_pct": 0.43,
+      "duplicate_pct": 0.0,
+      "outlier_pct": 26.53,
+      "quality_score": 94.5
+    },
+    {
+      "table": "sellers",
+      "rows": 3095,
+      "null_pct": 0.0,
+      "duplicate_pct": 0.0,
+      "outlier_pct": 0,
+      "quality_score": 100.0
+    },
+    {
+      "table": "category_translation",
+      "rows": 71,
+      "null_pct": 0.0,
+      "duplicate_pct": 0.0,
+      "outlier_pct": 0,
+      "quality_score": 100.0
+    },
+    {
+      "table": "geolocation",
+      "rows": 1000163,
+      "null_pct": 0.0,
+      "duplicate_pct": 0,
+      "outlier_pct": 0,
+      "quality_score": 100.0
+    }
+  ]
+}
